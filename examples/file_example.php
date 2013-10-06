@@ -12,8 +12,29 @@ AutoLoader::RegisterAutoLoader();
 
 $driver = new FileDriver('file_queue');
 
-/* TRUNCATE */
-exec('rm -fr file_queue/*');
+function delete($path)
+{
+    $it = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($path),
+        RecursiveIteratorIterator::CHILD_FIRST
+    );
+
+    /**
+     * @var \SplFileInfo[] $it
+     */
+    foreach ($it as $file) {
+        if (in_array($file->getBasename(), array('.', '..'))) {
+            continue;
+        } elseif ($file->isDir()) {
+            rmdir($file->getPathname());
+        } elseif ($file->isFile() || $file->isLink()) {
+            unlink($file->getPathname());
+        }
+    }
+}
+
+
+delete(__DIR__ . '/file_queue');
 
 $queue = new Queue($driver);
 

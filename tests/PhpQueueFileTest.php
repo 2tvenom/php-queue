@@ -7,9 +7,30 @@ class PhpQueueFileTest extends \PhpQueueTestDriver
 {
     private static $connection = 'file_queue';
 
+    private static function delete($path)
+    {
+        $it = new \RecursiveIteratorIterator(
+            new \RecursiveDirectoryIterator($path),
+            \RecursiveIteratorIterator::CHILD_FIRST
+        );
+        /**
+         * @var \SplFileInfo[] $it
+         */
+        foreach ($it as $file) {
+
+            if (in_array($file->getBasename(), array('.', '..'))) {
+                continue;
+            } elseif ($file->isDir()) {
+                rmdir($file->getPathname());
+            } elseif ($file->isFile() || $file->isLink()) {
+                unlink($file->getPathname());
+            }
+        }
+    }
+
     public static function prepareTestExecution()
     {
-        exec('rm -fr ' . self::$connection . '/*');
+        self::delete(self::$connection);
     }
 
     /**
@@ -22,6 +43,6 @@ class PhpQueueFileTest extends \PhpQueueTestDriver
 
     public static function tearDownAfterClass()
     {
-        exec('rm -fr ' . self::$connection . '/*');
+        self::delete(self::$connection);
     }
 }
