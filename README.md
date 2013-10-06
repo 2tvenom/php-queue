@@ -300,6 +300,7 @@ for($i=0; $i<3; $i++){
 ```
 ####*Result*
 Execute steps:
+
 1. Execute `Job1`. Status done
 2. Execute `Job2`. Status done
 3. Execute `Job3`. Status done
@@ -757,6 +758,7 @@ After arror in callback task got status: `CALLBACK ERROR` without execution othe
 ### Callback execution priority
 
 *Callback:*
+
 1. Sub task callback/error callback
 2. Parent callback/error callback
 3. Global callback/error callback
