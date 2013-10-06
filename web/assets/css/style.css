@@ -1,0 +1,77 @@
+@import url('/assets/css/bootstrap.min.css');
+@import url('/assets/css/font-awesome.min.css');
+
+html, body {
+    height:100%;
+    min-height: 100%;
+}
+
+body > div {
+    min-height: 100%;
+    height: 100%;
+}
+
+#menu {
+    background-color: #3c444f;
+    padding: 0 0 0 0;
+}
+#menu a {
+    color: #ffffff;
+    padding: 3px 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#menu a:hover {
+    background-color: #485460;
+}
+
+#menu .process {
+    position: relative;
+    background-color: #505962;
+    color: white;
+    text-align: center;
+    padding: 3px 0;
+}
+#menu .sub-nav {
+    display: none;
+}
+
+#sub-tasks{
+    margin-top: 10px;
+}
+
+#menu .sub-nav a {
+    padding-left: 30px;
+}
+
+#menu .badge{
+    color: #3c444f;
+    background-color: white;
+}
+
+#tasks_list {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 0 0 0;
+}
+
+#task-details {
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+.details_header {
+    background-color: #e1edf7;
+    padding: 1px 15px 8px 15px;
+}
+
+#ajax-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 99999;
+}
+
+.task-menu {
+    margin-top: 10px;
+}

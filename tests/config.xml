@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit verbose="true" bootstrap="bootstrap.php">
+    <php>
+        <var name="MYSQL_DB_DSN" value="mysql:dbname=queue_test;host=localhost"/>
+        <var name="MYSQL_DB_USER" value="root"/>
+        <var name="MYSQL_DB_PASSWORD" value=""/>
+        <var name="PGSQL_DB_DSN" value="pgsql:dbname=queue"/>
+        <var name="PGSQL_DB_USER" value="postgres"/>
+        <var name="PGSQL_DB_PASSWORD" value=""/>
+        <var name="SQLITE_DB_DSN" value="sqlite:queue.sqlite"/>
+        <var name="DB_TABLE" value="queue_tasks"/>
+    </php>
+</phpunit>
