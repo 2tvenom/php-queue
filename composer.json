@@ -1,9 +1,9 @@
 {
-  "name": "2tvenom/PhpQueue",
+  "name": "2tvenom/php-queue",
   "type": "library",
   "description": "PHP Queue for task execution",
   "keywords": ["php", "queue"],
-  "homepage": "https://github.com/2tvenom/PhpQueue",
+  "homepage": "https://github.com/2tvenom/php-queue",
   "license": "PHP",
   "authors": [
     {
