@@ -1,0 +1,23 @@
+{
+  "name": "2tvenom/PhpQueue",
+  "type": "library",
+  "description": "PHP Queue for task execution",
+  "keywords": ["php", "queue"],
+  "homepage": "https://github.com/2tvenom/PhpQueue",
+  "license": "PHP",
+  "authors": [
+    {
+      "name": "Pavel <Ven> Gulbin",
+      "email": "2tvenom@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "PhpQueue": "src"
+    }
+  }
+}
