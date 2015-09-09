@@ -39,8 +39,8 @@ abstract class IObject
             }
             return $get_array;
         }
-
-        return array_shift($this->get(array($name)));
+        $data = $this->get(array($name));
+        return array_shift($data);
     }
 
     /**
